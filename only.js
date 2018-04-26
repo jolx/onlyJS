@@ -1,1 +1,252 @@
-function write(b,c=null){if(445<b.length)return html;null==c?html+=(b?b:'')+'<br/>':html=(b?b:'-')+html}var createElem=function(b){return document.createElement(b)},yt_ocultar=function(){var b=document.getElementsByTagName('yt-icon'),c=document.querySelector('#content.ytd-app');if(0<b.length)for(i=0;i<b.length;i++)void(b[i].style.cssText='display:none;',$parm='S');else $parm='N';return $parm},elegirTumblr=function(){var b=new Date,c=b.getDate(),e=b.getDay(),f=b.getMonth(),g=b.getFullYear(),h=Math.floor(Math.random()*(g-2010+1))+2010,j=window.location.origin,k='',l=j.match(/[^(http://|https://|http://www)][^.]*/);if(l){++f,c=Math.floor(31*Math.random())+1,f=Math.floor(12*Math.random())+1;var m=['random','archive','filter-by/audio','day/'+h+'/'+f+'/'+c+''],n=m[Math.floor(Math.random()*m.length)];return k=null==n.match(/http:\/\/tumblr.com/)?null==n.match(/filter\.*/)?j+'/'+n:j+'/archive/'+n:n,k}},fbHidden=function(b){console.log('\u2554\u2550\u2550\u2550\u2550\u2B07\uFE0F FACEBOOK \u2B07\uFE0F\u2550\u2550\u2550\u2550\u2557');var c=document.querySelector('link[rel*=\'icon\']')||createElem('link');c.type='image/x-icon',c.rel='shortcut icon',c.href='http://www.stackoverflow.com/favicon.ico',document.getElementsByTagName('head')[0].appendChild(c);var e=document.getElementById('mainContainer'),g=!0;if(b){for(i=0;i<x.length;i++)x[i].style.backgroundColor='black';for(i=0;i<x5vb.length;i++)x5vb[i].style.backgroundColor='black';for(i=0;i<y.length;i++)void(y[i].style.cssText=cssString);for(i=0;i<chat.length;i++)void(chat[i].style.cssText=cssString);null!=id_cont&&(id_cont.style.backgroundColor='black'),null!=id_fb&&(id_fb.style.cssText='background-color: #34436182;height:100%'),null!=e&&(e.style.cssText='opacity:0.1'),aborrar?removeClass('_5r93'):(removeClass(),g=!1),write(profile,1)}else write('\u255A\u2550\u2550\u2550\u2550\u2550 FIN \u2550\u2550\u2550\u2550\u2550\u255D <br> hay FB');return g},removeClass=function(b){var c,e,f,g,h,j,k,l,m;let n='';if(!b){var o=window.prompt('hey! put css class name: so im going to code');o&&(g=o.split(' '),1<g.length&&(h=g.length))}else c=document.getElementsByClassName(b),f=b;if(void 0==h){if(console.log('respuesta:',o),e=o?o:f,c=void 0==o?document.getElementsByClassName(b):document.getElementsByClassName(e),console.log('eleme.: ',c.length),!c)return;for(var p=c.length-1;0<=p;p--)j=c[p],k=j.className.split(' '),l=k.splice(k.indexOf(e),1).join(' '),m=k.join(' '),j.className=m,n+='elemento:'+j+' ',console.log('elemento: ',j)}else{for(console.log('Array  ',g),console.log('repeat ('+h+') times');0<h;){if(e=o?g[h-1]:f,console.log('css ',e),c=void 0==o?document.getElementsByClassName(b):document.getElementsByClassName(g[h-1]),console.log('eleme.: ',c.length,' from array=>',g[h-1]),!c)return;for(var p=c.length-1;0<=p;p--)j=c[p],k=j.className.split(' '),l=k.splice(k.indexOf(g[h-1]),1).join(' '),m=k.join(' '),j.className=m,n+='element:'+j+' x ',console.log('counter:',h,' elemen: ',j);h-=1}console.log('repetir x',h)}write(n)},setnewTitle=function(b,c=null){var e=window.document.title,f=e.replace(/[\u1000-\uFFFF]+/ig,'').trim();window.document.title=f;var g=window.document,h=g.title;switch(c){case null:if(null!=b)g.title=b;else{var j=window.prompt('Put a new title for window');if(j)g.title=j;else{for(;null==j||''==j;)j=window.prompt('Cmon Put a valid title for window ');g.title=j}}break;case'1':g.title=null==b?emojis[nuRandom+1]+' '+h+' '+getEmojis:emojis[nuRandom+1]+' '+b+' '+getEmojis;break;default:alert('that parm isnt set already');}},hideAds=function(b,c){var e,f=0,g=[],h=!0,k=!1,l='';e=b?b.join(','):'[id*=\'to\'],[id*=\'root\'],[id*=\'ads\'],[class*=\'ads\'],[id*=\'ad_\'],[class*=\'ad_\'],[id*=\'azk\'],[class*=\'azk\']';var n=[].slice.call(document.querySelectorAll(e)),o=['div','a','p','ins'];switch(c){case null:for(var q,p=n.length-1;0<=p;p--){q=n[p];let u=[].slice.call(q.querySelectorAll(e)),v=u.length-1;for(;0<v;)0<=o.indexOf(u[v].localName,0)&&(f+=1,g[f]=u[v],n[v].remove(),k=h),v-=1;q.remove()}l='option null';break;case'1':let s=[].slice.call(document.querySelectorAll('[id*=\'ads\'],[class*=\'ads\'],[id*=\'ad_\'],[class*=\'ad_\']')),t=s.length-1;for(l='total of element with ads:'+s.length;0<t;)0<=o.indexOf(s[t].localName,0)&&(f+=1,g[f]=s[t],s[t].remove(),k=h),t-=1;l='option 1';break;default:for(var q,p=n.length-1;0<=p;p--){q=n[p];let u=[].slice.call(q.querySelectorAll(e)),v=u.length-1;for(;0<v;)0<=o.indexOf(u[v].localName,0)&&(f+=1,g[f]=u[v],n[v].remove(),k=h),v-=1}l='option default';}return{element_find:e,done:k,count:f,message:l,_arrays:{elements:n,tags:o,values:g},_params:{element_arr:b,p:c}}};
+<script type="text/javascript">
+var url = window.location.href, currentUrl = window.location.origin, tumblr = url.match(/tumblr.com/), newUrl = ''; 
+var yt = url.match(/(?:|\s)youtube.com/ig); 
+var fb = url.match(/(?:|\s)facebook.com/ig); 
+function write( line, i = null ) {
+	/* write into a HTML */
+	if(line.length > 445){return html};
+	if(i!=null){
+		html = ( line ? line : '-' ) + html;
+	}else{
+		html += ( line ? line : '' ) + '<br/>';
+	}
+};
+var createElem = function(element){
+	return document.createElement(element);
+}
+function newElement(element,attribute,inner){
+	if(typeof(element) === "undefined"){return false;}
+	if(typeof(inner)   === "undefined"){inner = "";}
+	var el = document.createElement(element);
+	if(typeof(attribute) === 'object'){
+		for(var key in attribute){
+			el.setAttribute(key,attribute[key]);
+		}
+	}
+	if(!Array.isArray(inner)){inner = [inner];}
+	for(var k = 0;k < inner.length;k++){
+		if(inner[k].tagName){
+			el.appendChild(inner[k]);
+		}else{
+			el.appendChild(document.createTextNode(inner[k]));
+		}
+	}
+	return el;
+}
+var yt_ocultar = function(){ 
+	var $parm,
+	$yt_icon = document.getElementsByTagName('yt-icon'), id_container = document.querySelector("#content.ytd-app");
+	if($yt_icon.length > 0){for (i = 0; i < $yt_icon.length; i++) {$parm = 'S';void($yt_icon[i].style.cssText = 'display:none;'); }
+	}else{ $parm = 'N';} 
+	return $parm; 
+}
+var elegirTumblr = function(){
+	var d = new Date(), c_date  = d.getDate(), c_day   = d.getDay(), c_month = d.getMonth(), c_year  = d.getFullYear();
+	var rand_year = Math.floor( Math.random() * (c_year - 2010 + 1)) + 2010;
+	var currentUrl = window.location.origin, ntumblr='',
+	/* seraparar url y solo obtener el subdominio */
+	subdominio = currentUrl.match(/[^(http:\/\/|https:\/\/|http:\/\/www)][^.]*/);
+	if(!subdominio) return;
+	c_month = c_month + 1;
+	/* random date & month */
+	c_date  = Math.floor(Math.random() * 31) + 1; 
+	c_month = Math.floor(Math.random() * 12) + 1;
+	var toTumblr = ["random","archive", "filter-by/audio", 
+					/*"http://tumblr.com/liked/by/" + subdominio, */
+					"day/"+rand_year+"/"+c_month +"/"+c_date+""];  
+	var setTumblr = toTumblr[Math.floor(Math.random() * toTumblr.length)];	
+	if( setTumblr.match(/http:\/\/tumblr.com/) != null ){
+		ntumblr = setTumblr;
+	}else if(setTumblr.match(/filter\.*/) != null ){
+		ntumblr = currentUrl + '/archive/' + setTumblr;
+	}else{
+		ntumblr = currentUrl + '/' + setTumblr;
+	}
+	return ntumblr;
+} 
+var fbHidden = function(doit){
+	/* change icon if you are on facebook */ 
+	console.log('╔════⬇️ FACEBOOK ⬇️════╗');
+	let url_ = 'https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d';
+	let link = document.querySelector("link[rel*='icon']") || newElement('link',{type:"image/x-icon",rel:"shortcut icon",href:url_}); 
+	if(link){link.href=url_; } /*  link.type = 'image/x-icon'; link.rel = 'shortcut icon'; */
+	document.getElementsByTagName('head')[0].appendChild(link); 
+	let todark = document.getElementById("mainContainer");
+	let nofb = doit, $passed = true;
+	if(nofb){
+		for (i = 0; i < x.length; i++){    x[i].style.backgroundColor = "black";    } 
+		for (i = 0; i < x5vb.length; i++){ x5vb[i].style.backgroundColor = "black"; } 
+		for (i = 0; i < y.length; i++){    void(y[i].style.cssText = cssString);    } 
+		for (i = 0; i < chat.length; i++){ void(chat[i].style.cssText = cssString); }
+		if((id_cont !=null) ){id_cont.style.backgroundColor = "black";}
+		if((id_fb   !=null) ){id_fb.style.cssText = 'background-color: #34436182;height:100%';}
+		if((todark  !=null) ){todark.style.cssText = "opacity:0.1";}		
+		if (aborrar){ removeClass("_5r93"); }else{ removeClass(); $passed = false}
+		write(profile,1);
+	}else{
+		write('╚═════ FIN ═════╝ <br> hay FB');
+	}
+	return $passed;
+}
+var removeClass = function(classToRemove){
+	var elems, setCss, claseElemento, many, contador,elem,classes,newClass,textoCss;
+	let html1 = '';
+	if(!classToRemove){
+		var answer = window.prompt('hey! put css class name: so im going to code');
+		if(answer){many = answer.split(' ');if(many.length > 1){contador = many.length}}
+	}else{
+		elems = document.getElementsByClassName(classToRemove);
+		claseElemento = classToRemove;
+	}
+	if(contador == undefined ){
+		console.log('respuesta:',answer);
+		setCss = (!answer) ? claseElemento:answer;
+		elems = (answer!=undefined) ? document.getElementsByClassName(setCss):document.getElementsByClassName(classToRemove);
+		console.log('eleme.: ',elems.length);
+		if (!elems) return;
+		for (var i=elems.length-1;i>=0;i--){
+			elem       = elems[i];
+			classes    = elem.className.split(" ");
+			newClass   = classes.splice(classes.indexOf(setCss),1).join(" ");
+			textoCss   = classes.join(' ');
+			elem.className = textoCss;
+			html1 += 'elemento:' + elem + ' ';
+			console.log('elemento: ', elem); 
+		}
+	}else{
+		console.log('Array  ',many);
+		console.log('repeat (' + contador + ') times');
+		while( contador > 0){
+			setCss = (!answer) ? claseElemento:many[contador-1];
+			console.log('css ',setCss);
+			elems = (answer!=undefined) ? document.getElementsByClassName(many[contador-1]):document.getElementsByClassName(classToRemove);
+			console.log('eleme.: ',elems.length,' from array=>',many[contador-1]);
+			if (!elems) return;
+			for (var i=elems.length-1;i>=0;i--){
+				elem       = elems[i];
+				classes    = elem.className.split(" ");
+				newClass   = classes.splice(classes.indexOf(many[contador-1]),1).join(" ");
+				textoCss   = classes.join(' ');
+				elem.className = textoCss;
+				html1 += 'element:' + elem + ' x ';
+				console.log('counter:',contador,' elemen: ', elem); 
+			}				
+			contador -= 1;
+		}
+		console.log('repetir x',contador);
+	}
+	write(html1);
+} 
+var setnewTitle = function (texto, a = null){
+	/* reset title with no special character nor emojis */
+	var cTitle  = window.document.title;
+	var ntexto = cTitle.replace(/[\u1000-\uFFFF]+/ig, "").trim();
+    window.document.title = ntexto;
+	/* set new title with special character */
+	var w = window.document;
+	var current_title = w.title;
+	switch (a){
+		case null:
+			if(texto != null){ w.title = texto;}else{
+				var answer = window.prompt('Put a new title for window');
+				if(answer){
+					w.title = answer;				
+				}else{
+					while (answer == null || answer == ""){
+						answer = window.prompt('Cmon Put a valid title for window ');
+					}
+					w.title = answer;
+				}
+			}
+			break;
+		case "1":
+			if(texto == null){ w.title = emojis[nuRandom + 1] + ' ' + current_title + ' ' + getEmojis; }else{
+				w.title = emojis[nuRandom + 1] + ' ' + texto + ' ' + getEmojis;
+			}
+			break;
+		default: 
+			alert('that parm isnt set already');
+	}
+}
+var hideAds = function($element_arr,$p){
+	var divs,$counter = 0,$arr = new Array(),yes = true,no = false,$boll = no,$txt='';
+	var accepted = ($p) ? yes:no;
+	if($element_arr){
+		divs = $element_arr.join(",");
+		}else{	
+		divs = "[id*='to'],[id*='root'],[id*='ads'],[class*='ads'],[id*='ad_'],[class*='ad_'],[id*='azk'],[class*='azk']";
+	}	
+	var arr = [].slice.call(document.querySelectorAll(divs));
+	var tagArrayAllowed = ["div","a","p","ins"];
+	/* select options */
+	switch ($p){
+		case null:
+			for(var i=arr.length-1;i>=0;i--){
+				var ele = arr[i];
+				let for_h = [].slice.call(ele.querySelectorAll(divs));
+				let x = for_h.length-1;		
+				while( x > 0  ){ 
+					if( tagArrayAllowed.indexOf(for_h[x].localName,0) >= 0){
+						$counter += 1;
+						$arr[$counter] = for_h[x];
+						arr[x].remove();
+						$boll = yes;
+					}		
+					x-=1;
+				}
+				ele.remove();
+			}
+			$txt = "option null";
+			break;
+		case "1":
+			let $divs = "[id*='ads'],[class*='ads'],[id*='ad_'],[class*='ad_']";
+			let $arr1 = [].slice.call(document.querySelectorAll($divs));
+			let x = $arr1.length-1;
+			$txt = 'total of element with ads:' + $arr1.length;
+			while( x > 0 ){
+				if(tagArrayAllowed.indexOf($arr1[x].localName,0) >= 0){
+					$counter += 1;
+					$arr[$counter] = $arr1[x];
+					$arr1[x].remove();
+					$boll = yes;
+				}
+				x-=1;
+			}
+			$txt = "option 1";
+			break;
+		default: 
+			for(var i=arr.length-1;i>=0;i--){
+				var ele = arr[i];
+				let for_h = [].slice.call(ele.querySelectorAll(divs));
+				let x = for_h.length-1;		
+				while( x > 0  ){ 
+					if( tagArrayAllowed.indexOf(for_h[x].localName,0) >= 0){
+						$counter += 1;
+						$arr[$counter] = for_h[x];
+						arr[x].remove();
+						$boll = yes;
+					}		
+					x-=1;
+				}
+			}
+			$txt = "option default";
+	}
+	/*var to return*/
+	return {
+		   element_find: divs,
+		   done: $boll,
+		   count: $counter,
+		   message: $txt,
+	     _arrays: {
+			     elements:arr,
+				 tags:tagArrayAllowed, 
+				 values:$arr
+				},
+		 _params: { 
+		         element_arr:$element_arr, 
+				           p:$p
+				}
+	};	
+}
+/* END FUNCTION*/
+</script>
