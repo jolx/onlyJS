@@ -6,16 +6,11 @@ https://wiselwisel.com/post/161329489941/sutil
 https://wiselwisel.com/post/168789804556/dog-rides-sheep
 
 
-// 20180627       ============================================================
--- https://stackoverflow.com/questions/51067828/how-to-display-image-caption-with-image-in-slider
-var slideIndex = 1;
-iniciar();
-showDivs(slideIndex);
-addButton(slideIndex);
+// 20180628       ============================================================
 
-function plusDivs(n) {
-    showDivs(slideIndex += n);
-}
+function minusDivs(n) {
+    showDivs(slideIndex -= n);
+}	
 
 function plusDivs(n) {
 	if(n > 1){n = 1};
@@ -28,16 +23,102 @@ function iniciar(){
 }
 
 function addButton(n) {
+	var arr_functions = ["plusDivs","currentDiv","minusDivs"];
+	if(typeof(n)=== "undefined"){ n = 1;}
+	var elemA = document.createElement("button");
+	var elTXT = document.createTextNode("NEXT"); 
+	elTXT = (n == 3) ? document.createTextNode("TOP "):document.createTextNode("NEXT");
+	var functionApply = (n == 1)? "javascript:"+arr_functions[0]+"(" + n + ");":"javascript:"+arr_functions[2]+"(1);";
+	functionApply = (n == 3)? "javascript:"+arr_functions[1]+"(1);":functionApply;
+	elemA.setAttribute("id", "buttonNext" +n);
+	elemA.setAttribute('onclick', functionApply );
+	//elemA.setAttribute('onclick', "javascript:plusDivs(" + n + ");");
+	elemA.appendChild(elTXT);
+	var xx = document.querySelector('button[id*="buttonNext'+n+'"]');
+	if(xx == null){ 
+		document.body.appendChild(elemA); 
+		var xx = document.querySelector('button[id*="buttonNext'+n+'"]');
+		xx.style = "position:fixed";
+	}
+	if(n > 1 && xx != null){
+		let xnumber = ( xx.offsetHeight * n ) + 18; 
+		xx.style = "position:fixed;top:"+xnumber+"px";
+	}
+	n++;
+}	
+
+function currentDiv(n) {
+    showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+	var $slides = $(".mySlides");
+    if (n > x.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = x.length
+    }
+    for (i = 0; i < x.length; i++) {
+		$($slides[i]).fadeOut("slow");
+        x[i].style.display = "none";
+    }
+	$($slides[slideIndex - 1]).fadeIn("slow");
+    x[slideIndex - 1].style.display = "block";
+}
+
+var slideIndex = 1;
+iniciar();
+showDivs(slideIndex);
+addButton(slideIndex);
+
+// ===========================================================================
+// 20180627       ============================================================
+-- https://stackoverflow.com/questions/51067828/how-to-display-image-caption-with-image-in-slider
+var slideIndex = 1;
+iniciar();
+showDivs(slideIndex);
+addButton(slideIndex);
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function minusDivs(n) {
+    showDivs(slideIndex -= n);
+}	
+
+function plusDivs(n) {
+	if(n > 1){n = 1};
+    showDivs(slideIndex += n);
+}		
+
+function iniciar(){
+	var lista = $("#hot-network-questions li");
+	lista.each(function(i){ $(this).addClass("mySlides");  });
+}
+
+function addButton(n) {
+	var arr_functions = ["plusDivs","currentDiv","minusDivs"];
+	if(typeof(n)=== "undefined"){ n = 1;}
 	var elemA = document.createElement("button");
 	var elTXT = document.createTextNode("NEXT");
+	var functionApply = (n > 1)? "javascript:"+arr_functions[0]+"(" + n + ");":"javascript:"+arr_functions[2]+"(" + n + ");";
 	elemA.setAttribute("id", "buttonNext" +n);
-	elemA.setAttribute('onclick', "javascript:plusDivs(" + n + ");");
+	elemA.setAttribute('onclick', functionApply );
+	//elemA.setAttribute('onclick', "javascript:plusDivs(" + n + ");");
 	elemA.appendChild(elTXT);
-	var xx = document.getElementById("buttonNext"+n);
+	var xx = document.querySelector('button[id*="buttonNext'+n+'"]');
 	if(xx == null){ 
-		document.body.appendChild(elemA); xx.style = "position:fixed"; 
-	}else{ xx.style = "position:fixed";  
-		if(n > 1){let xnumber = Math.floor(Math.random() * 500); xx.style = "position:fixed;top:"+xnumber+"px";}
+		document.body.appendChild(elemA); 
+		var xx = document.querySelector('button[id*="buttonNext'+n+'"]');
+		xx.style = "position:fixed";
+	}
+	if(n > 1 && xx != null){
+		let xnumber = ( xx.offsetHeight * n ) + 18; 
+		xx.style = "position:fixed;top:"+xnumber+"px";
 	}
 	n++;
 }	
